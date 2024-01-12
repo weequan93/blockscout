@@ -9,3 +9,7 @@ services:
     command: redis-server
     volumes:
       - ./redis-data:/data
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
