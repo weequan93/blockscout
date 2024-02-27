@@ -17,7 +17,7 @@ defmodule Indexer.Fetcher.EmptyBlocksSanitizer do
   alias Explorer.Chain.{Block, PendingBlockOperation, Transaction}
   alias Explorer.Chain.Import.Runner.Blocks
 
-  @interval :timer.seconds(1)
+  @interval :timer.seconds(10)
 
   defstruct interval: @interval,
             json_rpc_named_arguments: []
