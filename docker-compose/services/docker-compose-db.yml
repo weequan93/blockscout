@@ -14,7 +14,3 @@ services:
       - 7432:5432
     volumes:
       - ./blockscout-db-data:/var/lib/postgresql/data/
-    ulimits:
-      nofile:
-        soft: "65536"
-        hard: "65536"
