@@ -11,7 +11,7 @@ config :explorer, Explorer.Repo,
   # Default of `5_000` was too low for `BlockFetcher` test
   ownership_timeout: :timer.minutes(7),
   timeout: :timer.seconds(60),
-  queue_target: 1000,
+  queue_target: 5000,
   migration_lock: nil
 
 # Configure API database
@@ -22,7 +22,7 @@ config :explorer, Explorer.Repo.Replica1,
   # Default of `5_000` was too low for `BlockFetcher` test
   ownership_timeout: :timer.minutes(1),
   timeout: :timer.seconds(60),
-  queue_target: 1000,
+  queue_target: 5000,
   enable_caching_implementation_data_of_proxy: true,
   avg_block_time_as_ttl_cached_implementation_data_of_proxy: false,
   fallback_ttl_cached_implementation_data_of_proxy: :timer.seconds(20),
@@ -36,7 +36,7 @@ config :explorer, Explorer.Repo.Account,
   # Default of `5_000` was too low for `BlockFetcher` test
   ownership_timeout: :timer.minutes(1),
   timeout: :timer.seconds(60),
-  queue_target: 1000
+  queue_target: 5000
 
 config :logger, :explorer,
   level: :warn,
