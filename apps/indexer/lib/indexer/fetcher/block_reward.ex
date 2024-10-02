@@ -25,8 +25,8 @@ defmodule Indexer.Fetcher.BlockReward do
 
   @behaviour BufferedTask
 
-  @default_max_batch_size 100
-  @default_max_concurrency 40
+  @default_max_batch_size 10
+  @default_max_concurrency 4
 
   @doc """
   Asynchronously fetches block rewards for each `t:Explorer.Chain.Explorer.block_number/0`` in `block_numbers`.

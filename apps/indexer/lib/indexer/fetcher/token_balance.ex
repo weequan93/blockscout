@@ -25,8 +25,8 @@ defmodule Indexer.Fetcher.TokenBalance do
 
   @behaviour BufferedTask
 
-  @default_max_batch_size 1000
-  @default_max_concurrency 100
+  @default_max_batch_size 100
+  @default_max_concurrency 10
 
   @max_retries 3
 

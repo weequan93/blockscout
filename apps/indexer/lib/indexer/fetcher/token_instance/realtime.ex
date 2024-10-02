@@ -13,8 +13,8 @@ defmodule Indexer.Fetcher.TokenInstance.Realtime do
 
   @behaviour BufferedTask
 
-  @default_max_batch_size 10
-  @default_max_concurrency 100
+  @default_max_batch_size 1
+  @default_max_concurrency 10
 
   @doc false
   def child_spec([init_options, gen_server_options]) do

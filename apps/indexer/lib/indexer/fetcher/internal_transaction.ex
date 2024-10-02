@@ -22,8 +22,8 @@ defmodule Indexer.Fetcher.InternalTransaction do
 
   @behaviour BufferedTask
 
-  @default_max_batch_size 100
-  @default_max_concurrency 40
+  @default_max_batch_size 10
+  @default_max_concurrency 4
 
   @doc """
   Asynchronously fetches internal transactions.
