@@ -27,8 +27,8 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
 
 pool_size =
   if System.get_env("DATABASE_READ_ONLY_API_URL"),
-    do: ConfigHelper.parse_integer_env_var("POOL_SIZE", 150),
-    else: ConfigHelper.parse_integer_env_var("POOL_SIZE", 140)
+    do: ConfigHelper.parse_integer_env_var("POOL_SIZE", 50),
+    else: ConfigHelper.parse_integer_env_var("POOL_SIZE", 40)
 
 # Configures the database
 config :explorer, Explorer.Repo,
@@ -38,22 +38,20 @@ config :explorer, Explorer.Repo,
 
 pool_size_api =
   if System.get_env("DATABASE_READ_ONLY_API_URL"),
-    do: ConfigHelper.parse_integer_env_var("POOL_SIZE_API", 150),
-    else: ConfigHelper.parse_integer_env_var("POOL_SIZE_API", 110)
+    do: ConfigHelper.parse_integer_env_var("POOL_SIZE_API", 50),
+    else: ConfigHelper.parse_integer_env_var("POOL_SIZE_API", 10)
 
 # Configures API the database
 config :explorer, Explorer.Repo.Replica1,
   url: ExplorerConfigHelper.get_api_db_url(),
   pool_size: pool_size_api,
-  ssl: ExplorerConfigHelper.ssl_enabled?(),
-  timeout: 30000
+  ssl: ExplorerConfigHelper.ssl_enabled?()
 
 # Configures Account database
 config :explorer, Explorer.Repo.Account,
   url: ExplorerConfigHelper.get_account_db_url(),
   pool_size: ConfigHelper.parse_integer_env_var("ACCOUNT_POOL_SIZE", 50),
-  ssl: ExplorerConfigHelper.ssl_enabled?(),
-  timeout: 30000
+  ssl: ExplorerConfigHelper.ssl_enabled?()
 
 variant = Variant.get()
 
