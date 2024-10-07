@@ -6,7 +6,7 @@ import Bitwise
 config :indexer,
   ecto_repos: [Explorer.Repo],
   # bytes
-  memory_limit: 1 <<< 30
+  memory_limit: 10 <<< 30
 
 # config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
 

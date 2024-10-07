@@ -73,7 +73,7 @@ defmodule ConfigHelper do
 
   @spec indexer_memory_limit() :: integer()
   def indexer_memory_limit do
-    indexer_memory_limit_default = 1 <<< 30
+    indexer_memory_limit_default = 10 <<< 30
 
     "INDEXER_MEMORY_LIMIT"
     |> safe_get_env(to_string(indexer_memory_limit_default))
