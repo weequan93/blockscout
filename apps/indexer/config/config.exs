@@ -1,9 +1,12 @@
 # This file is responsible for configuring your application
 # and its dependencies with the aid of the Config module.
 import Config
+import Bitwise
 
 config :indexer,
-  ecto_repos: [Explorer.Repo]
+  ecto_repos: [Explorer.Repo],
+  # bytes
+  memory_limit: 1 <<< 30
 
 # config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
 
